@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Priyanshu 🎂</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh; overflow-x:hidden;
+  background:linear-gradient(135deg,#ffb6c1,#ffd1dc,#c7f0ff);
+}
+.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float{position:absolute;bottom:-80px;font-size:42px;animation:up linear infinite;opacity:.8}
+@keyframes up{to{transform:translateY(-120vh) rotate(360deg)}}
+.wrap{position:relative;z-index:2;min-height:100vh;display:grid;place-items:center;padding:18px}
+.card{
+  width:min(720px,100%); min-height:540px; padding:32px 22px;
+  background:rgba(255,255,255,.91); backdrop-filter:blur(8px);
+  border-radius:30px; box-shadow:0 18px 60px rgba(80,20,50,.25);
+  text-align:center; display:none; animation:pop .55s ease;
+}
+.card.active{display:flex;flex-direction:column;align-items:center;justify-content:center}
+@keyframes pop{from{opacity:0;transform:scale(.85) translateY(25px)}to{opacity:1;transform:scale(1)}}
+.emoji{font-size:72px;animation:bounce 1.3s infinite;margin-bottom:8px}
+@keyframes bounce{50%{transform:translateY(-12px) rotate(5deg)}}
+h1{color:#e91e63;font-size:clamp(30px,6vw,52px);margin:10px 0 16px}
+h2{color:#ff4081;font-size:clamp(24px,4vw,34px);margin-bottom:18px}
+p{font-size:clamp(17px,2.8vw,22px);line-height:1.6;color:#333;max-width:620px}
+.btn{
+ border:0;border-radius:999px;padding:15px 26px;margin:18px 6px 0;
+ font-size:17px;font-weight:bold;color:white;cursor:pointer;
+ background:linear-gradient(45deg,#ff4081,#ff7a59);
+ box-shadow:0 8px 20px rgba(233,30,99,.3);transition:.25s;
+}
+.btn:hover{transform:scale(1.06)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:min(570px,100%);margin:12px auto}
+.gallery img{width:100%;height:210px;object-fit:cover;border-radius:18px;box-shadow:0 8px 18px rgba(0,0,0,.18);transition:.3s}
+.gallery img:hover{transform:scale(1.03)}
+.badges{list-style:none;text-align:left;font-size:20px;line-height:1.9;margin:10px auto 0}
+.photoHero{width:230px;height:230px;object-fit:cover;border-radius:50%;border:7px solid #ff5c93;box-shadow:0 0 0 8px #ffd3e1}
+#noBtn{position:relative}
+.confetti{position:fixed;top:-20px;width:11px;height:11px;z-index:10;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+.small{font-size:15px;color:#777;margin-top:10px}
+.finalName{font-size:22px;font-weight:bold;color:#d81b60;margin-top:15px}
+@media(max-width:520px){.card{padding:28px 15px;min-height:590px}.gallery img{height:165px}.badges{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="bg" id="bg"></div>
+<div class="wrap">
+
+<section class="card active">
+  <div class="emoji">🚨😂🎂</div>
+  <h1>Attention Please!</h1>
+  <p>Aaj ek <b>bahut hi special din</b> hai! 😎<br><br>
+  Kyunki aaj meri favourite <b>Pagal + Nautanki + Drama Queen</b> ka Birthday hai! 😂👑🎉</p>
+  <button class="btn" onclick="next()">🎁 Click Karne Ki Himmat Hai?</button>
+</section>
+
+<section class="card">
+  <div class="emoji">👑🎉</div>
+  <h1>Happy Birthday<br>Priyanshu Kumari! 🥳</h1>
+  <img src="photo1.png" class="photoHero" alt="Birthday Girl">
+  <p class="small">Warning: Itni cute photo dekh kar attitude aur badh sakta hai 😂</p>
+  <button class="btn" onclick="next()">😂 Aage Dekho</button>
+</section>
+
+<section class="card">
+  <div class="emoji">🤣📋</div>
+  <h2>Priyanshu ki Special Powers 🤭</h2>
+  <ul class="badges">
+    <li>👑 Drama Queen — 100%</li>
+    <li>🤪 Pagalpanti — Unlimited</li>
+    <li>😤 Gussa — Dangerous Level</li>
+    <li>😂 Bakbak — Non Stop</li>
+    <li>😎 Attitude — Full Charged</li>
+    <li>❤️ Bestie Material — 1000%</li>
+  </ul>
+  <button class="btn" onclick="next()">😈 Next Surprise</button>
+</section>
+
+<section class="card">
+  <div class="emoji">📸✨</div>
+  <h2>Birthday Girl Gallery 👑</h2>
+  <div class="gallery">
+    <img src="photo1.png" alt="Priyanshu photo 1">
+    <img src="photo2.png" alt="Priyanshu photo 2">
+    <img src="photo3.png" alt="Priyanshu photo 3">
+    <img src="photo4.png" alt="Priyanshu photo 4">
+  </div>
+  <button class="btn" onclick="next()">🎂 Cake Cutting Time</button>
+</section>
+
+<section class="card">
+  <div class="emoji">🎂🎉</div>
+  <h1>Virtual Cake Cutting!</h1>
+  <p>Priyanshu, ab ek wish maango... ✨<br><br>
+  Lekin please <b>mujhe kam pareshaan karne</b> wali wish mat maangna, woh kabhi poori nahi hogi! 😂</p>
+  <button class="btn" onclick="cutCake()">🎂 CUT THE CAKE!</button>
+</section>
+
+<section class="card">
+  <div class="emoji">😏😂</div>
+  <h1>Ek Important Question!</h1>
+  <p>Kya tum sach me duniya ki sabse achhi Bestie ho? 🤔</p>
+  <button class="btn" onclick="next()">YES 😎</button>
+  <button class="btn" id="noBtn">NO 😭</button>
+  <p class="small">NO dabane ki koshish karo... agar tumse ho paye to 😂</p>
+</section>
+
+<section class="card">
+  <div class="emoji">🎊🎂❤️</div>
+  <h1>Happy Birthday Priyanshu! 🥳</h1>
+  <p>
+    Tum annoying ho 😂<br>
+    Tum pagal ho 🤪<br>
+    Tum drama queen ho 👑<br>
+    Aur kabhi kabhi bahut zyada bakbak bhi karti ho 🤣<br><br>
+    Lekin phir bhi... ❤️<br><br>
+    <b>Tum meri favourite pagal Bestie ho! 🫶😂❤️</b><br><br>
+    Hamesha aise hi khush rehna, haste rehna aur mujhe pareshaan karti rehna! 🎉
+  </p>
+  <div class="finalName">With Lots of Pagalpanti 😂❤️<br>— Anish Yadav</div>
+  <button class="btn" onclick="restart()">🔁 Dobara Dekho</button>
+</section>
+
+</div>
+<script>
+const cards=document.querySelectorAll('.card'); let i=0;
+function burst(n=120){
+ for(let k=0;k<n;k++){
+  const c=document.createElement('i'); c.className='confetti';
+  c.style.left=Math.random()*100+'vw';
+  c.style.background=`hsl(${Math.random()*360},90%,60%)`;
+  c.style.animationDuration=(2+Math.random()*3)+'s';
+  document.body.appendChild(c); setTimeout(()=>c.remove(),5500);
+ }
+}
+function next(){cards[i].classList.remove('active'); i=Math.min(i+1,cards.length-1); cards[i].classList.add('active'); burst();}
+function restart(){cards[i].classList.remove('active');i=0;cards[i].classList.add('active');burst(80)}
+function cutCake(){burst(180);setTimeout(next,650)}
+const noBtn=document.getElementById('noBtn');
+function moveNo(e){
+ e?.preventDefault();
+ const x=Math.random()*220-110, y=Math.random()*180-90;
+ noBtn.style.transform=`translate(${x}px,${y}px)`;
+}
+noBtn.addEventListener('mouseenter',moveNo);
+noBtn.addEventListener('touchstart',moveNo,{passive:false});
+const bg=document.getElementById('bg');
+['🎈','💖','✨','🎉','🌸','💝'].forEach((x,j)=>{
+ for(let k=0;k<3;k++){
+  const d=document.createElement('div');d.className='float';d.textContent=x;
+  d.style.left=Math.random()*100+'%';d.style.animationDuration=(7+Math.random()*8)+'s';
+  d.style.animationDelay=(-Math.random()*10)+'s';bg.appendChild(d);
+ }
+});
+</script>
+</body>
+</html>
